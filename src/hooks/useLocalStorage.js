@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { userDarkMode } from './userDarkMode';
 
 export const useLocalStorage = (key, initialValue) => {
   const [storedValue, setStoredValue] = useState(() => {
@@ -7,7 +6,7 @@ export const useLocalStorage = (key, initialValue) => {
     return item ? JSON.parse(item) : initialValue;
   });
   const setValue = value => {
-    setValue(value);
+    setStoredValue(value);
     window.localStorage.setItem(key, JSON.stringify(value));
   };
 
